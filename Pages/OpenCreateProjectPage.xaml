@@ -1,0 +1,106 @@
+﻿<Page x:Class="WpfAppTestUsickUI.Pages.OpenCreateProjectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfAppTestUsickUI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OpenCreateProjectPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+       <Grid Margin="5" Grid.Column="1">
+    <StackPanel>
+        <!-- Кнопки наверху -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock  Text="Путь к проекту" Margin="5"/>
+                            <TextBox />
+                        </StackPanel>
+                
+                <Button Grid.Column="1" Content="Открыть"  Margin="10"/>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Click="CreateClick" Content="Создать проект" Margin="5"/>
+                <Button Content="Открыть проект" Margin="5"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Блок с именем пользователя внизу -->
+       
+    </StackPanel>
+            
+        </Grid>
+
+
+        <Grid Margin="10" Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Ellipse Grid.Column="0" Width="80" Height="80" Margin="10">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/usick.ico"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10">
+                <TextBlock Text="Имя пользователя" FontSize="16" FontWeight="Bold"/>
+                <TextBlock Text="Дата создания пользователя" FontSize="14"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.RowSpan="2">
+            <ListView ScrollViewer.CanContentScroll="False" Name="ProjectListView" Margin="10">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="10" Width="400">
+                            <StackPanel>
+                                <TextBlock Text="Название проекта:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Name}" Margin="0,0,0,10"/>
+                                <TextBlock Text="Автор проекта:" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Author}" Margin="0,0,0,10"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Скачать проект" Command="{Binding DownloadCommand}" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Дата создания:" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Right"/>
+                                    <TextBlock Text="{Binding DateCreate}" Margin="5,0,0,0" HorizontalAlignment="Right"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Button Content="Удалить проект" Command="{Binding DeleteCommand}" Margin="0,0,5,0"/>
+                                    <TextBlock Text="Дата изменения:" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Right"/>
+                                    <TextBlock Text="{Binding DateUpdate}" Margin="5,0,0,0" HorizontalAlignment="Right"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>

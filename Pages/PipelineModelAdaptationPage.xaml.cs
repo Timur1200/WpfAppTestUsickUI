@@ -34,5 +34,40 @@ namespace WpfAppTestUsickUI.Pages
         {
             Nav.GoHome();
         }
+
+        private void PathClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MakeAdaptationPipelineModelClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MakeOptimizationPipelineModelClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoOilWellModelsPageClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoGeneralPageClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoOptimizingPipelineModelsPageClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

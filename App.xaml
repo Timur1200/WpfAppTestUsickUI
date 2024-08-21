@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:WpfAppTestUsickUI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- Глобальный стиль для всех кнопок -->
+       
     </Application.Resources>
 </Application>

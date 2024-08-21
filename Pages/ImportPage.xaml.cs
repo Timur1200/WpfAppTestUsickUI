@@ -44,5 +44,40 @@ namespace WpfAppTestUsickUI.Pages
         {
 
         }
+
+        private void PathHistoryClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PathTargetClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExecuteImportClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoViewDataBasePageClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoSettingParamConstPageClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoGeneralPageClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoVerificationDatabasePageClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
